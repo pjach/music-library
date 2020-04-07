@@ -3,6 +3,7 @@ package vu.lt.usecases;
 import lombok.Getter;
 import lombok.Setter;
 import vu.lt.entities.Song;
+import vu.lt.interceptors.LoggedInvocation;
 import vu.lt.persistence.SongsDAO;
 
 import javax.annotation.PostConstruct;
@@ -35,6 +36,7 @@ public class UpdateSongDetails implements Serializable {
     }
 
     @Transactional
+    @LoggedInvocation
     public String updateSongTempo() {
         try{
             songsDAO.update(this.song);

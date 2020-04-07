@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import vu.lt.entities.Artist;
 import vu.lt.entities.Song;
+import vu.lt.interceptors.LoggedInvocation;
 import vu.lt.persistence.ArtistsDAO;
 import vu.lt.persistence.SongsDAO;
 
@@ -39,6 +40,7 @@ public class SongsForArtist implements Serializable {
     }
 
     @Transactional
+    @LoggedInvocation
     public String createSong() {
         songToCreate.setArtist(this.artist);
         songsDAO.persist(songToCreate);
