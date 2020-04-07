@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -40,8 +41,8 @@ public class Artist {
     @Column(name = "LAST_NAME")
     private String lastName;
 
-    @OneToMany(mappedBy = "artist")
-    private List<Song> songs;
+    @OneToMany(mappedBy = "artist", fetch = FetchType.EAGER)
+    private List<Song> songs = new ArrayList<>();
 
     @Override
     public boolean equals(Object o) {

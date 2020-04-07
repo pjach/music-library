@@ -26,5 +26,7 @@ public class ArtistsDAO {
         this.em.persist(artist);
     }
 
-    public Artist findOne(Integer id) { return em.find(Artist.class, id); }
+    public Artist findOne(Integer id) {
+        return em.find(Artist.class, id);
+    }
 }
