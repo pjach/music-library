@@ -31,7 +31,7 @@ public class Artists {
     @Transactional
     public String createArtist(){
         this.artistsDAO.persist(artistToCreate);
-        return "success";
+        return "index?faces-redirect=true";
     }
 
     private void loadAllArtists(){

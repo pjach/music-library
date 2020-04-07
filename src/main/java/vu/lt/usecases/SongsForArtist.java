@@ -42,6 +42,6 @@ public class SongsForArtist implements Serializable {
     public String createSong() {
         songToCreate.setArtist(this.artist);
         songsDAO.persist(songToCreate);
-        return "/songs.xhtml?faces-redirect=true&artistId=" + this.artist.getId();
+        return "songs?faces-redirect=true&artistId=" + this.artist.getId();
     }
 }
