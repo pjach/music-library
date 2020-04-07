@@ -1,5 +1,5 @@
 <datasources>
-    <datasource jndi-name="SongsDB" pool-name="SongsDS">
+    <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="java:jboss/datasources/ExampleDS">
         <driver>h2</driver>
         <connection-url>jdbc:h2:~/h2database/SongsDB;AUTO_SERVER=TRUE</connection-url>
         <security>

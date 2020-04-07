@@ -3,13 +3,13 @@ package vu.lt.persistence;
 import vu.lt.entities.Song;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 @ApplicationScoped
 public class SongsDAO {
 
-    @PersistenceContext
+    @Inject
     private EntityManager em;
 
     public void persist(Song song){

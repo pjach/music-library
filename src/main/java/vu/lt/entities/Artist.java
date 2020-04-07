@@ -41,7 +41,7 @@ public class Artist {
     @Column(name = "LAST_NAME")
     private String lastName;
 
-    @OneToMany(mappedBy = "artist", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "artist")
     private List<Song> songs = new ArrayList<>();
 
     @Override
