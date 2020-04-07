@@ -9,4 +9,4 @@
     <interceptors>
         <class>vu.lt.interceptors.MethodLogger</class>
     </interceptors>
-</beans> 
+</beans>
