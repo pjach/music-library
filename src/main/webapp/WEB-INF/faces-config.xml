@@ -9,7 +9,7 @@
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{songs.createSong}</from-action>
+            <from-action>#{artists.createArtist}</from-action>
             <from-outcome>success</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
             <redirect/>

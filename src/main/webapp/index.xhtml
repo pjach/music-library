@@ -6,15 +6,15 @@
 >
 <h:head/>
 <h:body>
-    <h2>Songs:</h2>
+    <h2>Artists:</h2>
     <ol>
-        <ui:repeat value="#{songs.allSongs}" var="song">
-            <li>#{song.name}</li>
+        <ui:repeat value="#{artists.allArtists}" var="artist">
+            <li><h:link value="#{artist.stageName}" outcome="songs?artistId=#{artist.id}" /></li>
         </ui:repeat>
     </ol>
     <h:form>
-        <h:inputText value="#{songs.songToCreate.name}" required="true" />
-        <h:commandButton value="Add new song" action="#{songs.createSong}" />
+        <h:inputText value="#{artists.artistToCreate.stageName}" required="true" />
+        <h:commandButton value="Add new artist" action="#{artists.createArtist}" />
     </h:form>
 </h:body>
 </html>
