@@ -12,5 +12,9 @@
             <li>#{song.name}</li>
         </ui:repeat>
     </ol>
+    <h:form>
+        <h:inputText value="#{songs.songToCreate.name}" required="true" />
+        <h:commandButton value="Add new song" action="#{songs.createSong}" />
+    </h:form>
 </h:body>
 </html>

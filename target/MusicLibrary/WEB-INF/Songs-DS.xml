@@ -1,0 +1,9 @@
+<datasources>
+    <datasource jndi-name="SongsDB" pool-name="SongsDS">
+        <driver>h2</driver>
+        <connection-url>jdbc:h2:~/h2database/SongsDB;AUTO_SERVER=TRUE</connection-url>
+        <security>
+            <user-name>sa</user-name>
+            <password>sa</password>
+        </security>
+    </datasource></datasources>
