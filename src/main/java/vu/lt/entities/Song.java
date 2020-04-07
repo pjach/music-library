@@ -25,17 +25,19 @@ public class Song implements Serializable {
     @Size(max = 50)
     @Column(name = "NAME")
     private String name;
-    private int tempo;
+
+    @Column(name = "TEMPO")
+    private Integer tempo;
 
     @ManyToOne
     @JoinColumn(name="ARTIST_ID")
     private Artist artist;
-    public Song (){
-    }
 
-    public Song(int tempo, String name){
-        this.name = name;
-        this.tempo = tempo;
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
+
+    public Song (){
     }
 
     @Override

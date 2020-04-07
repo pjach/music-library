@@ -15,4 +15,12 @@ public class SongsDAO {
     public void persist(Song song){
         this.em.persist(song);
     }
+
+    public Song findOne(Integer id){
+        return em.find(Song.class, id);
+    }
+
+    public Song update(Song song){
+        return em.merge(song);
+    }
 }

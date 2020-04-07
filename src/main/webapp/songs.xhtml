@@ -10,7 +10,9 @@
     <h2>Songs made by artist #{songsForArtist.artist.stageName} name:</h2>
     <ol>
         <ui:repeat value="#{songsForArtist.artist.songs}" var="song">
-            <li>#{song.name}</li>
+            <li>
+                <h:link value="#{song.name} #{song.tempo}" outcome="songDetails?songId=#{song.id}" />
+            </li>
         </ui:repeat>
     </ol>
     <h:form>
