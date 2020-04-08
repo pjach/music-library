@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>lt.mif.vu</groupId>
-  <artifactId>java-ee-practice</artifactId>
+  <groupId>org.example</groupId>
+  <artifactId>MusicLibrary</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>java-ee-practice Maven Webapp</name>
+  <name>MusicLibrary Maven Webapp</name>
+  <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
     <jakartaee.api.version>8.0.0</jakartaee.api.version>
   </properties>
 
@@ -26,11 +27,10 @@
       <version>${jakartaee.api.version}</version>
       <scope>provided</scope>
     </dependency>
-    <!--h2 database-->
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
-      <version>1.4.200</version>
+      <version>1.4.196</version>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -51,7 +51,7 @@
   </dependencies>
 
   <build>
-    <finalName>java-ee-practice</finalName>
+    <finalName>MusicLibrary</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
@@ -74,7 +74,7 @@
             <dependency>
               <groupId>com.h2database</groupId>
               <artifactId>h2</artifactId>
-              <version>1.4.195</version>
+              <version>1.4.196</version>
             </dependency>
           </dependencies>
         </plugin>

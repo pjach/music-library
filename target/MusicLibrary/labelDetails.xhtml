@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+
+<h:head/>
+<h:body>
+    <h2>#{updateLabelDetails.label.name}</h2>
+    <h4>Artists, signed to this label:</h4>
+    <ol>
+        <ui:repeat value="#{updateLabelDetails.label.artists}" var="artist">
+            <li>#{artist.stageName}</li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:outputText value="New artist: "/>
+        <h:inputText a:placeholder="enter the value" value="#{updateLabelDetails.artistStageName}" required="true" />
+        <h:commandButton value="update" action="#{updateLabelDetails.updateLabelArtists()}">
+            <f:param name="labelId" value="#{updateLabelDetails.label.id}" />
+        </h:commandButton>
+        <h:outputText value="Value was already modified by other user. If you want to override it - try again" rendered="#{param['error'] == 'optimistic-lock-exception'}" />
+        <h:outputText value="Artist not found or duplicate" rendered="#{param['error'] == 'artist-not-found'}" />
+    </h:form>
+    <h:link outcome="index" value="Back to home page"/>
+</h:body>
+</html>

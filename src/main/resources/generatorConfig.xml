@@ -11,7 +11,7 @@
                         password="sa">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="vu.lt.persistence.mybatis.model" targetProject="MAVEN" />
+        <javaModelGenerator targetPackage="vu.lt.mybatis.model" targetProject="MAVEN" />
 
         <sqlMapGenerator targetPackage="vu.lt.usecases.mybatis.xml" targetProject="MAVEN" />
         <javaClientGenerator type="XMLMAPPER" targetPackage="vu.lt.mybatis.dao" targetProject="MAVEN" />

@@ -44,6 +44,13 @@ public class Artist {
     @OneToMany(mappedBy = "artist")
     private List<Song> songs = new ArrayList<>();
 
+    @ManyToMany(mappedBy = "artists")
+    private List<Label> labels = new ArrayList<>();
+
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
