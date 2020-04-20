@@ -29,7 +29,7 @@ public class Song implements Serializable {
     @Column(name = "TEMPO")
     private Integer tempo;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="ARTIST_ID")
     private Artist artist;
 
