@@ -40,13 +40,20 @@ public class SongsController {
         return Response.ok(songDto).build();
     }
 
+    @Path("/")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Transactional
+    public Song create(Song s) {
+        songsDAO.persist(s);
+        return s;
+    }
+
     @Path("/{id}")
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Transactional
-    public Response update(
-            @PathParam("id") final Integer songId,
-            SongDto songData) {
+    public Response update(@PathParam("id") final Integer songId, SongDto songData) {
         try {
             Song existingSong = songsDAO.findOne(songId);
             if (existingSong == null) {
