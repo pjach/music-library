@@ -1,6 +1,6 @@
 package vu.lt.usecases;
 
-import vu.lt.services.BpmGenerator;
+import vu.lt.services.GenerateBPM;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -17,7 +17,7 @@ import java.util.concurrent.Future;
 public class GenerateRandomBPM implements Serializable {
 
     @Inject
-    BpmGenerator bpmGenerator;
+    GenerateBPM bpmGenerator;
 
     private Future<Integer> bpmGenerationTask = null;
 

@@ -8,17 +8,17 @@ import java.io.Serializable;
 import java.util.Random;
 import java.util.concurrent.Future;
 
-
 @ApplicationScoped
-public class BpmGenerator implements Serializable {
+public class TrapBPMGenerator implements Serializable, GenerateBPM {
 
+    @Override
     @Futureable
     public Future<Integer> generateBPM(){
         try {
             Thread.sleep(4000); // Simulate intensive work
         } catch (InterruptedException e) {
         }
-        final Integer generatedBPM = new Random().nextInt((130 - 120) + 1) +120;
+        final Integer generatedBPM = new Random().nextInt((176 - 100) + 1) + 100;
         return new AsyncResult<>(generatedBPM);
     }
 }

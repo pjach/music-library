@@ -9,4 +9,10 @@
     <interceptors>
         <class>vu.lt.interceptors.MethodLogger</class>
     </interceptors>
+    <alternatives>
+        <class>vu.lt.services.HouseBpmGenerator</class>
+    </alternatives>
+    <decorators>
+        <class>vu.lt.decorators.SongsDAODecorator</class>
+    </decorators>
 </beans>

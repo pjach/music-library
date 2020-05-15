@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 @ApplicationScoped
-public class SongsDAO {
+public class SongsDAO implements ISongsDAO {
 
     @Inject
     private EntityManager em;
